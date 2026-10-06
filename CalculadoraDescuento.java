@@ -1,19 +1,31 @@
 
-
 public class CalculadoraDescuento {
-    public static void main(String[] args){
-        double montocompra = 150;
-        boolean esmiembro = true;
-        if (esmiembro && montocompra >= 100) {
-            System.out.println("Obtiene un 20% de descuento");
-        } else if (esmiembro && montocompra < 100) {
-            System.out.println("Obtiene un 10% de descuento");
-        } else if (!esmiembro && montocompra >= 100) {
-            System.out.println("Obtiene un 5% de descuento");
+    public static void main(String[] args) {
+        // 1. Declaración de variables de entrada
+        double montoCompra = 150.0;
+        boolean esMiembro = true;
+
+        // 2. Variable para almacenar el porcentaje de descuento
+        double porcentajeDescuento = 0.0;
+
+        // 3. Evaluación de condiciones
+        if (esMiembro && montoCompra >= 100.0) {
+            porcentajeDescuento = 0.20; // 20% de descuento
+        } else if (esMiembro && montoCompra < 100.0) {
+            porcentajeDescuento = 0.10; // 10% de descuento
+        } else if (!esMiembro && montoCompra >= 100.0) {
+            porcentajeDescuento = 0.05; // 5% de descuento
         } else {
-            System.out.println("No obtiene descuento");
+            porcentajeDescuento = 0.0;  // Sin descuento (0%)
         }
-        System.out.println("Monto inicial de la compra: " + montocompra);
-        System.out.println("Monto final de la compra: " + (montocompra - (montocompra * 0.20)));
+
+        // 4. Cálculos dinámicos
+        double montoDescuento = montoCompra * porcentajeDescuento;
+        double montoFinal = montoCompra - montoDescuento;
+
+        // 5. Impresión de resultados
+        System.out.println("Monto inicial de la compra: $" + montoCompra);
+        System.out.println("Descuento aplicado: " + (int)(porcentajeDescuento * 100) + "%");
+        System.out.println("Monto final a pagar: $" + montoFinal);
     }
 }
