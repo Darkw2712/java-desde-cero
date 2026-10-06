@@ -1,5 +1,5 @@
 public class HolaMundo {
-    public static void main(string[] args){
-        console.println("Hello world in Java");
+    public static void main(String[] args){
+        System.out.println("Hello world in Java");
     }
 }
