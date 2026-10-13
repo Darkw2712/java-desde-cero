@@ -1,15 +1,42 @@
 public class CuentaBancaria {
-String titular;
-String numeroCuenta;
-double saldo;
+private String titular;
+private String numeroCuenta;
+private double saldo;
 
-//Consutructor
-public CuentaBancaria(String titular, String numeroCuenta, double saldo) {
+//Constructor
+public CuentaBancaria(String titular, String numeroCuenta, double saldoInicial) {
     this.titular = titular;
     this.numeroCuenta = numeroCuenta;
-    this.saldo = saldo;
+    //Se usa setter para validar el saldo inicial
+    if(saldoInicial >=0){
+        this.saldo = saldoInicial;
+    }else {
+        this.saldo = 0;
+
+    }
 }
 
+//Getters (para leer datos)
+public String getTitular() {
+    return titular;
+}
+
+public String getNumeroCuenta() {
+    return numeroCuenta;
+}
+
+public double getSaldo() {
+    return saldo;
+}  
+
+//Setters (para modificar datos de forma segura)
+public void setTitular(String titular) {
+    if(titular !=null && !titular.trim().isEmpty()){
+        this.titular = titular;
+    }else{
+        System.out.println("ERROR. El nombre del titular no puede estar vacío.");  
+    }
+}
 //Métodos
 public void depositar(double monto){
     if (monto>0){
