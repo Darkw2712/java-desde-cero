@@ -32,8 +32,6 @@ public void retirar(double monto){
 public void mostrarEstado(){
     System.out.println("Titular: " + titular + " | Número de cuenta: " + numeroCuenta + " | Saldo: $" + saldo);
 }
-
-
 }
 
 
